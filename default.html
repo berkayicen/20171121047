@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Berkay</title>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container" style="margin-top:150px;">
+             <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+               
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+
+                            LOGO
+                        </a>
+                    </div>
+                  
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active">
+                                <a href="index.html">Ana Sayfa</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hakkımızda
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="about-us">
+                                    <li>
+                                        <a href="default.html">Dosya Gönder</a>
+                                    </li>
+                                   
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="default.html">Dosya Transferi Yapın</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                 
+                </div>
+            
+            </nav>
+      <div class="row">
+        <div class="col-md-4">
+          
+          <h1>Sorunuzu Yazınız</h1>
+          <input type="file" id="txtSoru" class="form-control">
+          
+         
+          <br>
+          <button id="btnKaydet" class="btn btn-primary">Kaydet</button>
+          <hr>
+          <div id="sonuc"></div>
+  
+        </div>
+        <div class="col-md-8">
+          <h1>Kayıtlar</h1>
+          <table class="table table-hover" id="tbKayitlar">
+            <tr class="bg-info">
+  
+              <td>Dosyanız</td>
+             
+              <td>Gönder</td>
+              <td>Reset</td>
+              <td>Sil</td>
+            </tr>
+            
+           
+          </table>
+        </div>
+      </div>
+    </div>
+
+   
+      <script src="js/jquery-1.11.3.min.js"></script>
+      
+         <script src="js/bootstrap.min.js"></script>
+    <script>
+    	  	 $(function () {
+      $("#btnKaydet").click(function () {
+        var soru = $("#txtSoru").val();
+        var secenek1 = $("#txtSecenek1").val();
+        var secenek2 = $("#txtSecenek2").val();
+        var secenek3 = $("#txtSecenek3").val();
+        var secenek4 = $("#txtSecenek4").val();
+        if (soru == "" || secenek1 == "" || secenek2 == "" || secenek3 == "" || secenek4 == "") {
+          $("#sonuc").fadeIn(1000);
+          $("#sonuc").html("Lütfen Tüm Alanları Doldurunuz!");
+          $("#sonuc").removeClass();
+          $("#sonuc").addClass("alert alert-danger");
+          $("#sonuc").fadeOut(3000);
+          return false;
+        }
+        $("#tbKayitlar").append("<tr><td>" + soru + "</td><td><button class='btn btn-info'>Gönder</button></td><td><button class='btn btn-warning'>Reset</button></td><td><button class='btn btn-danger sil'>Sil</button></td></tr>");
+      });
+      $(document).on("click", ".sil", function () {
+        var satir = $(this).closest("tr");
+        satir.remove();
+      });
+    });
+    </script>
+  </body>
+</html>
