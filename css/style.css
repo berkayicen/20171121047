@@ -1,21 +1,18 @@
 html,
 body,
 #feature {
-	width: 100%;
-	height: 100%;
-	}
+    width: 100%;
+    height: 100%;
+}
 
+#feature {
+    background: url('../images/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
 
-
-	#feature {
-		background: url('../images/bg.jpg') no-repeat center center fixed;
-		background-size: cover;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-	}
-	
-
-	.text-center{
-	padding-top: 20%;
-	}
+.homePage {
+    padding-top: 20% !important;
+}
